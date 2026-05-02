@@ -15,12 +15,13 @@ function GroupForm({ setGroupName, setMembers }) {
   };
 
   return (
+    <div className="bg-white p-6 rounded-lg shadow-md mb-6 border border-gray-200">
     <form
       onSubmit={handleSubmit}
-      className="bg-white p-4 rounded-lg shadow-md mb-6"
     >
-      <h2 className="text-xl font-bold mb-4">Create Group</h2>
-
+      <h1 className="text-xl font-bold mb-4 mt-4 text-gray-800">Create Group</h1>
+      <div className="mb-4 mt-9">
+      <label className="block text-left text-sm font-medium text-gray-700 mb-1 ">Group Name</label>
       <input
         type="text"
         placeholder="Group Name"
@@ -28,7 +29,8 @@ function GroupForm({ setGroupName, setMembers }) {
         onChange={(e) => setName(e.target.value)}
         className="w-full p-2 border rounded mb-3"
       />
-
+      </div>
+      <label className="block text-left text-sm font-medium text-gray-700 mb-1">Add Member</label>
       <input
         type="text"
         placeholder="Enter members (comma separated)"
@@ -39,11 +41,12 @@ function GroupForm({ setGroupName, setMembers }) {
 
       <button
         type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded"
+        className="bg-blue-600 text-white px-4 py-2 rounded mt-5"
       >
         Create
       </button>
     </form>
+    </div>
   );
 }
 

@@ -14,8 +14,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4">
-      <div className="max-w-2xl mx-auto text-center">
+    <div className="min-h-screen bg-gray-100 py-8 px-4 flex flex-col">
+      <div className="max-w-2xl mx-auto w-full text-center flex flex-col flex-1">
         <header className="mb-6">
           <h1 className="text-4xl font-extrabold text-blue-600">
             SplitBuddy
@@ -26,12 +26,14 @@ function App() {
         </header>
 
         {!groupName && (
-          <GroupForm setGroupName={setGroupName} setMembers={setMembers} />
+          <div className="flex-1 flex flex-col justify-center pb-20">
+            <GroupForm setGroupName={setGroupName} setMembers={setMembers} />
+          </div>
         )}
 
         {groupName && (
-          <div>
-            <div className="bg-blue-600 text-white p-4 rounded-lg shadow-md mb-6">
+          <div className="text-left flex-1">
+            <div className="bg-blue-600 text-white p-4 rounded-lg shadow-md mb-6 text-center">
               <h2 className="text-2xl font-bold">{groupName}</h2>
               <p className="text-blue-100 mt-1">
                 Members: {members.join(", ")}
