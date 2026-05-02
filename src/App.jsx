@@ -1,5 +1,6 @@
 import { useState } from "react";
 import GroupForm from "./components/GroupForm";
+import ExpenseList from "./components/ExpenseList";
 
 function App() {
   const [groupName, setGroupName] = useState("");
@@ -17,9 +18,14 @@ function App() {
           </p>
         </header>
 
-{!groupName && (
-  <GroupForm setGroupName={setGroupName} setMembers={setMembers} />
-)}
+    {!groupName && (
+      <GroupForm setGroupName={setGroupName} setMembers={setMembers} />
+    )}
+    {groupName && (
+      <div>
+        <ExpenseList expenses={expenses} />
+      </div>
+    )}
       </div>
     </div>
   );
