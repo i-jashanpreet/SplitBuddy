@@ -1,11 +1,17 @@
 import { useState } from "react";
 import GroupForm from "./components/GroupForm";
+import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
+import BalanceSheet from "./components/BalanceSheet";
 
 function App() {
   const [groupName, setGroupName] = useState("");
   const [members, setMembers] = useState([]);
   const [expenses, setExpenses] = useState([]);
+
+  const addExpense = (newExpense) => {
+    setExpenses([...expenses, newExpense]);
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4">
@@ -19,14 +25,17 @@ function App() {
           </p>
         </header>
 
-    {!groupName && (
-      <GroupForm setGroupName={setGroupName} setMembers={setMembers} />
-    )}
-    {groupName && (
-      <div>
-        <ExpenseList expenses={expenses} />
-      </div>
-    )}
+        {!groupName && (
+          <GroupForm setGroupName={setGroupName} setMembers={setMembers} />
+        )}
+
+        {groupName && (
+          <div>
+            <ExpenseForm members={members} addExpense={addExpense} />
+            <ExpenseList expenses={expenses} />
+            <BalanceSheet expenses={expenses} members={members} />
+          </div>
+        )}
       </div>
     </div>
   );
