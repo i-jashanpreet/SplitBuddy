@@ -1,10 +1,9 @@
 import { useState } from "react";
-import GroupForm from "./components/GroupForm";
-import ExpenseForm from "./components/ExpenseForm";
-import ExpenseList from "./components/ExpenseList";
-import BalanceSheet from "./components/BalanceSheet";
 
 function App() {
+  const [groupName, setGroupName] = useState("");
+  const [members, setMembers] = useState([]);
+
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4">
       <div className="max-w-2xl mx-auto text-center">
@@ -16,9 +15,13 @@ function App() {
             Split expenses easily with friends
           </p>
         </header>
+
+        {!groupName && (
+          <p className="text-gray-500">Create a group to get started</p>
+        )}
       </div>
     </div>
   );
 }
 
-export default App
+export default App;
