@@ -31,6 +31,13 @@ function App() {
 
         {groupName && (
           <div>
+            <div className="bg-blue-600 text-white p-4 rounded-lg shadow-md mb-6">
+              <h2 className="text-2xl font-bold">{groupName}</h2>
+              <p className="text-blue-100 mt-1">
+                Members: {members.join(", ")}
+              </p>
+            </div>
+
             <ExpenseForm members={members} addExpense={addExpense} />
             <ExpenseList expenses={expenses} />
             <BalanceSheet expenses={expenses} members={members} />
