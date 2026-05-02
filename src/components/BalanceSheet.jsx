@@ -51,6 +51,19 @@ while (i < debtors.length && j < creditors.length) {
   return (
     <div className="bg-white p-4 rounded-lg shadow-md mb-6">
       <h2 className="text-xl font-bold mb-4">Balance Sheet</h2>
+      <h3 className="text-lg font-semibold mt-4 mb-2">Settlements</h3>
+
+{settlements.length === 0 ? (
+  <p className="text-gray-500">No settlements needed</p>
+) : (
+  <ul>
+    {settlements.map((s, index) => (
+      <li key={index} className="border-b py-2">
+        {s.from} pays ₹{s.amount.toFixed(2)} to {s.to}
+      </li>
+    ))}
+  </ul>
+)}
     </div>
   );
 }
