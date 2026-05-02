@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GroupForm from "./components/GroupForm";
 
 function App() {
   const [groupName, setGroupName] = useState("");
@@ -16,9 +17,9 @@ function App() {
           </p>
         </header>
 
-        {!groupName && (
-          <p className="text-gray-500">Create a group to get started</p>
-        )}
+{!groupName && (
+  <GroupForm setGroupName={setGroupName} setMembers={setMembers} />
+)}
       </div>
     </div>
   );
