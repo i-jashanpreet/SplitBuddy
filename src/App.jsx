@@ -5,6 +5,7 @@ import ExpenseList from "./components/ExpenseList";
 function App() {
   const [groupName, setGroupName] = useState("");
   const [members, setMembers] = useState([]);
+  const [expenses, setExpenses] = useState([]);
 
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4">
