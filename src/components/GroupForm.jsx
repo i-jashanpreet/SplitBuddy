@@ -15,33 +15,33 @@ function GroupForm({ setGroupName, setMembers }) {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md mb-6 border border-gray-200">
+    <div className="bg-white p-8 rounded-2xl shadow-2xl mb-6 border-4 border-black">
     <form
       onSubmit={handleSubmit}
     >
-      <h1 className="text-xl font-bold mb-4 mt-4 text-gray-800">Create Group</h1>
-      <div className="mb-4 mt-9">
-      <label className="block text-left text-sm font-medium text-gray-700 mb-1 ">Group Name</label>
+      <h1 className="text-3xl font-black mb-6 mt-2 text-black uppercase tracking-wide">Create Group</h1>
+      <div className="mb-6 mt-6">
+      <label className="block text-left text-sm font-bold text-black mb-2 uppercase tracking-wider">Group Name</label>
       <input
         type="text"
         placeholder="Group Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="w-full p-2 border rounded mb-3"
+        className="w-full p-3 border-2 border-black rounded-lg mb-4 focus:ring-4 focus:ring-yellow-400 focus:outline-none transition-all font-medium text-black placeholder-gray-500"
       />
       </div>
-      <label className="block text-left text-sm font-medium text-gray-700 mb-1">Add Member</label>
+      <label className="block text-left text-sm font-bold text-black mb-2 uppercase tracking-wider">Add Member</label>
       <input
         type="text"
         placeholder="Enter members (comma separated)"
         value={memberInput}
         onChange={(e) => setMemberInput(e.target.value)}
-        className="w-full p-2 border rounded mb-3"
+        className="w-full p-3 border-2 border-black rounded-lg mb-4 focus:ring-4 focus:ring-yellow-400 focus:outline-none transition-all font-medium text-black placeholder-gray-500"
       />
 
       <button
         type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded mt-5"
+        className="bg-black hover:bg-gray-800 text-yellow-400 font-black px-6 py-4 rounded-xl mt-6 w-full uppercase tracking-widest transition-colors shadow-lg"
       >
         Create
       </button>

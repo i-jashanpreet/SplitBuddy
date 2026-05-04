@@ -14,13 +14,13 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4 flex flex-col">
+    <div className="min-h-screen bg-yellow-400 py-8 px-4 flex flex-col font-sans">
       <div className="max-w-2xl mx-auto w-full text-center flex flex-col flex-1">
-        <header className="mb-6">
-          <h1 className="text-4xl font-extrabold text-blue-600">
+        <header className="mb-8 mt-4">
+          <h1 className="text-5xl font-black text-black tracking-tight uppercase drop-shadow-sm">
             SplitBuddy
           </h1>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-900 mt-3 font-bold text-lg tracking-wide">
             Split expenses easily with friends
           </p>
         </header>
@@ -33,9 +33,9 @@ function App() {
 
         {groupName && (
           <div className="text-left flex-1">
-            <div className="bg-blue-600 text-white p-4 rounded-lg shadow-md mb-6 text-center">
-              <h2 className="text-2xl font-bold">{groupName}</h2>
-              <p className="text-blue-100 mt-1">
+            <div className="bg-black text-yellow-400 p-6 rounded-2xl shadow-xl mb-6 text-center border-4 border-black">
+              <h2 className="text-3xl font-black uppercase tracking-wide">{groupName}</h2>
+              <p className="text-gray-300 mt-2 font-medium">
                 Members: {members.join(", ")}
               </p>
             </div>

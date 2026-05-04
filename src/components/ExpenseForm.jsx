@@ -21,17 +21,17 @@ function ExpenseForm({ members, addExpense }) {
 
   return (
     <form
-      className="bg-white p-4 rounded-lg shadow-md mb-6"
+      className="bg-white p-6 rounded-2xl shadow-2xl mb-6 border-4 border-black"
       onSubmit={handleSubmit}
     >
-      <h2 className="text-xl font-bold mb-4">Add Expense</h2>
+      <h2 className="text-2xl font-black mb-6 text-black uppercase tracking-wide">Add Expense</h2>
 
       <input
         type="text"
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        className="w-full p-2 border rounded mb-3"
+        className="w-full p-3 border-2 border-black rounded-lg mb-4 focus:ring-4 focus:ring-yellow-400 focus:outline-none transition-all font-medium text-black placeholder-gray-500"
       />
 
       <input
@@ -39,13 +39,13 @@ function ExpenseForm({ members, addExpense }) {
         placeholder="Amount"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
-        className="w-full p-2 border rounded mb-3"
+        className="w-full p-3 border-2 border-black rounded-lg mb-4 focus:ring-4 focus:ring-yellow-400 focus:outline-none transition-all font-medium text-black placeholder-gray-500"
       />
 
       <select
         value={paidBy}
         onChange={(e) => setPaidBy(e.target.value)}
-        className="w-full p-2 border rounded mb-3"
+        className="w-full p-3 border-2 border-black rounded-lg mb-4 focus:ring-4 focus:ring-yellow-400 focus:outline-none transition-all font-medium text-black bg-white"
       >
         {members.map((member, index) => (
           <option key={index} value={member}>
@@ -54,7 +54,7 @@ function ExpenseForm({ members, addExpense }) {
         ))}
       </select>
 
-      <button className="bg-green-600 text-white px-4 py-2 rounded">
+      <button className="bg-black hover:bg-gray-800 text-yellow-400 font-black px-6 py-4 rounded-xl w-full uppercase tracking-widest transition-colors shadow-lg mt-2">
         Add Expense
       </button>
     </form>
