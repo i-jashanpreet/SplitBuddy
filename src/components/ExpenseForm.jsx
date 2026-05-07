@@ -38,6 +38,7 @@ function ExpenseForm({ members, addExpense }) {
         type="number"
         placeholder="Amount"
         value={amount}
+        min={0}
         onChange={(e) => setAmount(e.target.value)}
         className="w-full p-3 border-2 border-black rounded-lg mb-4 focus:ring-4 focus:ring-yellow-400 focus:outline-none transition-all font-medium text-black placeholder-gray-500"
       />
